@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kapcsolat | MONARQ Marketing Agency</title>
+  <link rel="stylesheet" href="../styles.css"/>
+</head>
+<body>
+  <!-- Navigációs menü -->
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">MONARQ</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html#hero">Kezdőlap</a></li>
+          <li><a href="../index.html#our-process">Tevékenység</a></li>
+          <li><a href="../index.html#about-us">Rólunk</a></li>
+          <li><a href="../index.html#references">Referenciák</a></li>
+          <li><a href="./contact.html">Kapcsolat</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Kapcsolati űrlap szekció -->
+  <main>
+    <section class="contact-form-section">
+      <div class="container">
+        <h2>Lépj kapcsolatba velünk!</h2>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Név</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Üzenet</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn">Küldés</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
