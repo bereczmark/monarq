@@ -1,0 +1,16 @@
+navigacios savba megy majd a logo, de megprobalom teljes kepernyore kiterjeszteni, es abba belereptetni a repulot
+
+this is not just a story...
+
+repulok motivuma es a nap sokszor jelenjen meg, mint dinamikus elem
+
+csapat tagjainak menjen kulon 1-1 oldal? van annyi tartalom?
+meg kell csinalni a telefonos nézetet is, főleg a menüre koncentrálva
+
+
+demo_0 utani otletek:
+
+monarq: logobol a foldgomb mint o betu
+lathatobb a story szoveg
+telefonos ui
+logobol kivenni a zoveg reszt es azt berakni a navigacio sarkaba, meg a minimal logot hatternek
