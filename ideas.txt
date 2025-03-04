@@ -14,3 +14,5 @@ monarq: logobol a foldgomb mint o betu
 lathatobb a story szoveg
 telefonos ui
 logobol kivenni a zoveg reszt es azt berakni a navigacio sarkaba, meg a minimal logot hatternek
+
+nav menu logo kozepre, dinamikus szoveg kiemelni, hero logo definialtabb
