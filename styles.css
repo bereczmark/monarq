@@ -82,7 +82,7 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(rgba(255, 225, 184, 0.5), rgba(246, 147, 68, 1)), 
+  background: linear-gradient(rgba(255, 225, 184, 0),  rgba(246, 147, 68, 0.1), rgba(246, 147, 68, 1)), 
               url('./assets/images/logo.png') center/cover no-repeat;
   /* Példa overlay-re:
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
