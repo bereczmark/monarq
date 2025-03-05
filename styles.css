@@ -494,7 +494,7 @@ button:hover {
     text-align: center;
   }
   .hero {
-    padding-top: 400px;
+    padding-top: 500px;
     min-height: auto; /* Allow the section to shrink if needed */
     height: auto;
   }
