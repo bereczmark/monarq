@@ -8,7 +8,6 @@
   <meta name="description" content="MONARQ Marketing Agency - Innovatív marketing megoldások vállalkozásod számára.">
   <!-- Favicon (opcionális) -->
   <!-- <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon"> -->
-
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -96,10 +95,10 @@
       <span>e</span>
     </div>
 
-    <!-- Folyamataink szakasz (our-process) színátmenetes háttérrel -->
-    <section id="our-process" class="our-process">
+    <!-- Folyamataink szakasz – data-bg attribútum: dark -->
+    <section id="our-process" class="our-process" data-bg="dark">
       <h2>FOLYAMATAINK</h2>
-      <hr>
+      <hr id="inithr">
       <br>
       <!-- 1. lépés -->
       <div class="process-step">
@@ -108,10 +107,10 @@
           <p>Tartunk egy ismerkedő találkozót online vagy élőben, ahol minden részletet egyeztetve megismerjük a cég igényeit és megbizonyosodunk róla, hogy tudjuk teljesíteni a kéréseit.</p>
         </div>
         <div class="step-image">
-          <img src="./assets/images/Monarque.png" alt="Ismerkedés">
+          <img src="./assets/images/ismerkedes.jpg" alt="Ismerkedés">
         </div>
       </div>
-      <hr>
+      <hr id="lefthrproc">
       <!-- 2. lépés (row-reverse) -->
       <div class="process-step reverse">
         <div class="step-text">
@@ -122,7 +121,7 @@
           <img src="./assets/images/tervezes.JPG" alt="Szerződés">
         </div>
       </div>
-      <hr>
+      <hr id="righthrproc">
       <!-- 3. lépés -->
       <div class="process-step">
         <div class="step-text">
@@ -133,7 +132,7 @@
           <img src="./assets/images/megvalositas.jpg" alt="Kreatív/Scriptek">
         </div>
       </div>
-      <hr>
+      <hr id="lefthrproc">
       <!-- 4. lépés (row-reverse) -->
       <div class="process-step reverse">
         <div class="step-text">
@@ -144,61 +143,78 @@
           <img src="./assets/images/eredmenyek.jpg" alt="Forgatás">
         </div>
       </div>
-      <!-- 5. lépés
-      <div class="process-step">
-        <div class="step-text">
-          <h3>5. Vágás/Utómunka</h3>
-          <p>Vágóink minden videót precízen és kreatívan dolgoznak ki. A legújabb trendeknek megfelelően alakítjuk a végeredményt, hogy a nézők figyelmét maximálisan megragadjuk.</p>
-        </div>
-        <div class="step-image">
-          <img src="./assets/images/step5.jpg" alt="Vágás/Utómunka">
-        </div>
-      </div> -->
     </section>
 
-    <!-- Rólunk rész -->
-    <section id="about-us" class="about-us">
+    <!-- Rólunk rész – Buborékos tartalom, egymás mellett, animációval -->
+    <section id="about-us" class="about-us" data-bg="dark">
       <h2>Rólunk</h2>
-      <div class="team-grid">
-        <div class="team-member">
+      <hr id="abouthrinit">
+      <div class="team-bubbles">
+        <!-- Csapattag 1 -->
+        <div class="team-bubble hidden">
           <img src="./assets/images/balu.jpg" alt="Marton Balázs">
           <h3>Marton Balázs</h3>
-          <p>Marketing specialist</p>
+          <p>Ügyvezető Igazgató</p>
         </div>
-        <div class="team-member">
+        <!-- Csapattag 2 -->
+        <div class="team-bubble hidden">
           <img src="./assets/images/haris.jpeg" alt="Haris">
-          <h3>Haris Nem Cigány</h3>
-          <p>Projektmenedzser</p>
+          <h3>Haris Dániel</h3>
+          <p>Kreatív Igazgató</p>
         </div>
-        <div class="team-member">
+        <!-- Csapattag 3 -->
+        <div class="team-bubble hidden">
           <img src="./assets/images/c.jpg" alt="Cigány">
           <h3>Cigány</h3>
-          <p>Videós & Vágó</p>
+          <p>Cigány</p>
         </div>
       </div>
     </section>
 
-    <!-- Referenciák -->
-    <section id="references" class="references">
+    <!-- Referenciák rész – elrendezés a folyamatainkhoz hasonló, animációval -->
+    <section id="references" class="references" data-bg="dark">
       <h2>Referenciák</h2>
-      <div class="reference-grid">
-        <div class="reference-item">
+      <hr id="abouthrinit">
+      <br>
+      <!-- Projekt 1 -->
+      <div class="process-step hidden">
+        <div class="step-image">
           <img src="reference1.jpg" alt="Referencia 1">
+        </div>
+        <div class="step-text">
           <h3>Projekt 1</h3>
           <p>Innovatív kampányunk eredményeként ügyfelünk online jelenléte drámai növekedést mutatott.</p>
         </div>
-        <div class="reference-item">
+      </div>
+      <hr id="righthr">
+      <!-- Projekt 2 -->
+      <div class="process-step reverse hidden">
+        <div class="step-image">
           <img src="reference2.jpg" alt="Referencia 2">
+        </div>
+        <div class="step-text">
           <h3>Projekt 2</h3>
           <p>Egyedi kreatív megoldásaink révén átalakítottuk ügyfelünk márkaidentitását.</p>
         </div>
-        <div class="reference-item">
+      </div>
+      <hr id="lefthr">
+      <!-- Projekt 3 -->
+      <div class="process-step hidden">
+        <div class="step-image">
           <img src="reference3.jpg" alt="Referencia 3">
+        </div>
+        <div class="step-text">
           <h3>Projekt 3</h3>
           <p>A stratégiai tervezéstől a megvalósításig minden lépést precízen koordináltunk.</p>
         </div>
-        <div class="reference-item">
+      </div>
+      <hr id="righthr">
+      <!-- Projekt 4 -->
+      <div class="process-step reverse hidden">
+        <div class="step-image">
           <img src="reference4.jpg" alt="Referencia 4">
+        </div>
+        <div class="step-text">
           <h3>Projekt 4</h3>
           <p>Eredményorientált kampányaink hosszútávú sikereket hoztak ügyfeleink számára.</p>
         </div>

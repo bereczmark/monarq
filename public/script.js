@@ -43,7 +43,7 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Intersection Observer az egyéb animációkhoz (pl. .process-step, .team-member, .reference-item)
+// Intersection Observer az egyéb animációkhoz (pl. .process-step, .team-bubble)
 const options = {
   root: null,
   threshold: 0.1
@@ -62,3 +62,31 @@ const observer = new IntersectionObserver((entries, observer) => {
 }, options);
 
 animatedElements.forEach(elem => observer.observe(elem));
+
+// Dinamikus szövegszín beállítása a háttér kontrasztja alapján
+window.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('section');
+  sections.forEach(section => {
+    setTextColorForSection(section);
+  });
+});
+
+function setTextColorForSection(section) {
+  // Ha a section rendelkezik data-bg attribútummal, azt használjuk
+  let bgType = section.getAttribute("data-bg");
+  if(bgType === "dark") {
+    section.style.color = "#fff";
+  } else if(bgType === "light") {
+    section.style.color = "#000";
+  } else {
+    // Próbáljuk meg lekérni a computed backgroundColor értéket
+    let bgColor = window.getComputedStyle(section).backgroundColor;
+    let rgb = bgColor.match(/\d+/g);
+    if(rgb && rgb.length >= 3) {
+      let r = parseInt(rgb[0]), g = parseInt(rgb[1]), b = parseInt(rgb[2]);
+      // Egyszerű luminancia számítás (percepció szerint)
+      let luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      section.style.color = luminance > 0.5 ? "#000" : "#fff";
+    }
+  }
+}
