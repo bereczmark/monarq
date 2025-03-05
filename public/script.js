@@ -1,4 +1,4 @@
-// Görgetés esemény: Repülőgép animációja, bal és jobb oldali vertikális feliratok mozgatása
+// Scroll event: Repülőgép animációja, bal és jobb oldali vertikális feliratok mozgatása
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
   
@@ -69,6 +69,15 @@ window.addEventListener('DOMContentLoaded', () => {
   sections.forEach(section => {
     setTextColorForSection(section);
   });
+  
+  // Mobile navigation toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+    });
+  }
 });
 
 function setTextColorForSection(section) {
