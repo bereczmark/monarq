@@ -50,6 +50,7 @@ body {
 .site-header .logo img {
   max-width: 50px;
   border-radius: 50px;
+  margin-top: 6px;
 }
 
 .site-header .main-nav ul {
@@ -268,7 +269,7 @@ body {
   border: none;
   height: 2px;
   background: #fdfdfd;
-  width: 200px;
+  width: 300px;
   margin: 20px auto;
 }
 
