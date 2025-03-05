@@ -498,6 +498,9 @@ button:hover {
     min-height: auto; /* Allow the section to shrink if needed */
     height: auto;
   }
+  .our-process{
+    padding-top: 200px;
+  }
 }
 
 /* Footer */
