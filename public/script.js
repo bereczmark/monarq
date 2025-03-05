@@ -78,6 +78,14 @@ window.addEventListener('DOMContentLoaded', () => {
       mainNav.classList.toggle('active');
     });
   }
+  
+  // Close hamburger menu automatically after clicking any nav link
+  const navLinks = mainNav.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('active');
+    });
+  });
 });
 
 function setTextColorForSection(section) {
