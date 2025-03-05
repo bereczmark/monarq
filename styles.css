@@ -466,6 +466,38 @@ button:hover {
   .nav-toggle {
     display: block;
   }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+  }
+  
+  .footer-nav ul {
+    flex-direction: column;
+    margin: 10px 0;
+    padding: 0;
+  }
+  
+  .footer-nav ul li {
+    margin: 5px 0;
+  }
+  
+  .footer-social {
+    margin: 10px 0;
+  }
+  
+  .footer-copy p {
+    font-size: 0.75rem;
+    margin: 10px 0;
+    text-align: center;
+  }
+  .hero {
+    padding-top: 400px;
+    min-height: auto; /* Allow the section to shrink if needed */
+    height: auto;
+  }
 }
 
 /* Footer */
@@ -478,7 +510,7 @@ button:hover {
   color: #fff;
   padding: 20px 20px;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .site-footer a {
