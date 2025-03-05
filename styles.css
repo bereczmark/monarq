@@ -173,10 +173,19 @@ body {
 
 .our-process h2 {
   font-size: 2rem;
-  margin-bottom: 40px;
-  color: #fff;
+  margin-bottom: 0px;
+  color: #563838;
   text-transform: uppercase;
 }
+
+.our-process hr{
+  border: none;
+  height: 2px;
+  background: #563838;
+  width: 50px;
+  margin: 20px auto;
+}
+
 
 /* process-step layout */
 .process-step {
@@ -294,7 +303,7 @@ body {
 .references h2 {
   font-size: 2rem;
   margin-bottom: 40px;
-  color: #333;
+  color: #ffffff;
 }
 
 .reference-grid {
