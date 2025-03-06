@@ -204,10 +204,11 @@ body {
 }
 
 .our-services h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 0px;
   color: #563838;
   text-transform: uppercase;
+  text-align: center;
 }
 
 /* Folyamataink (our-process) */
@@ -241,14 +242,14 @@ body {
   height: 2px;
   background: #563838;
   width: 300px;
-  margin: 20px auto;
+  margin: 0px auto;
 }
 #serviceinithr{
   border: none;
   height: 2px;
   background: #563838;
-  width: 350px;
-  margin: 20px auto;
+  width: 310px;
+  margin: 0px auto;
 }
 
 #lefthrproc{
@@ -332,14 +333,14 @@ body {
   height: 2px;
   background: #fdfdfd;
   width: 300px;
-  margin: 20px auto;
+  margin: 0px auto;
 }
 #portfoliohrinit{
   border: none;
   height: 2px;
   background: #fdfdfd;
   width: 200px;
-  margin: 20px auto;
+  margin: 0px auto;
 }
 
 .about-us h2 {
