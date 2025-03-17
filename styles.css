@@ -108,6 +108,7 @@ body {
   position: relative;
   transition: color 0.3s ease;
   padding: 10px 0;
+  font-family: cursive;
 }
 
 .site-header .main-nav ul li a:hover {
@@ -163,6 +164,7 @@ body {
   align-items: center;
   pointer-events: none;
   z-index: 0;
+  font-family: cursive;
 }
 
 .vertical-text {
@@ -181,7 +183,7 @@ body {
   transform: translateY(20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
   font-size: 2rem;
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.45);
   margin: 3px 0;
 }
 
@@ -291,13 +293,13 @@ body {
 }
 
 .step-text h3 {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   margin-bottom: 15px;
   color: #333;
 }
 
 .step-text p {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: #333;
 }
