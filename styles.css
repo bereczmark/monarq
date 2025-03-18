@@ -6,9 +6,7 @@
 }
 
 body {
-  /*font-family: "Montserrat", sans-serif;*/
-  /*font-family: Apple Chancery, cursive;*/
-  font-family: Bradley Hand, cursive;
+  font-family: "Montserrat", sans-serif;
   background: #000000;
   background-image: repeating-linear-gradient(
       45deg,
@@ -110,7 +108,7 @@ body {
   position: relative;
   transition: color 0.3s ease;
   padding: 10px 0;
-  font-family: Marker Felt, fantasy;
+  font-family: Comic Sans MS, Comic Sans, cursive;
   font-weight: bold;
 }
 
