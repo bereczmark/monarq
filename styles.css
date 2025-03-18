@@ -510,6 +510,20 @@ button:hover {
 
 /* Reszponzív */
 @media (max-width: 800px) {
+  body {
+    font-family: "Montserrat", sans-serif;
+    background: #000000;
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.02) 0,
+        rgba(0, 0, 0, 0.02) 1px,
+        transparent 1px,
+        transparent 20px
+    );
+    color: #333;
+    position: relative;
+    line-height: 1.4;
+  }
   .process-step {
     flex-direction: column;
   }
