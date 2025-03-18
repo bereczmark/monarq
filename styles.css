@@ -111,6 +111,7 @@ body {
   transition: color 0.3s ease;
   padding: 10px 0;
   font-family: Comic Sans MS, Comic Sans, cursive;
+  font-weight: bold;
 }
 
 .site-header .main-nav ul li a:hover {
