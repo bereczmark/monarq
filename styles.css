@@ -206,10 +206,47 @@ body {
   text-align: center;
 }
 
+.service-details {
+  min-height: 60vh;
+  padding: 69px 50px;
+  background: linear-gradient(
+    to bottom,
+    rgba(246, 147, 68, 1) 40%,
+    rgba(0, 0, 0, 0.832) 100%
+  );
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+}
+
+.service-details h2 {
+  color: black;
+  font-style: italic;
+  font-size: 1.8rem;
+}
+
+.service-details h3 {
+  color: black;
+  font-style: italic;
+  font-size: 1.6rem;
+}
+
+.service-details p {
+  color: white;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.service-details ul li {
+  color: whte;
+  font-style:normal;
+  font-size: 1.2rem;
+}
+
 /* From Uiverse.io by alexmaracinaru */ 
 .servb {
   position: relative;
   margin: auto;
+  margin-left: 5px;
   padding: 12px 18px;
   transition: all 0.2s ease;
   border: none;
@@ -265,6 +302,11 @@ body {
   transform: scale(0.95);
 }
 
+.service {
+  background-color: rgba(246, 148, 68, 0.4);
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
 
 .our-services h2 {
   font-size: 1.8rem;
@@ -537,6 +579,7 @@ button:hover {
   .step-text {
     text-align: center;
   }
+  
 
   .step-text h3 {
     font-size: 1.3rem;
@@ -697,4 +740,8 @@ button:hover {
 .show {
   opacity: 1;
   transform: translateY(0);
+}
+
+.hero-service {
+
 }
