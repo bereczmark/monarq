@@ -742,6 +742,72 @@ button:hover {
   transform: translateY(0);
 }
 
-.hero-service {
+/* Kétoszlopos szakasz: bal oldalon a szöveg, jobb oldalon a kép */
+.service-highlight {
+  background: #f8f6f4; /* Halvány, semleges háttérszín – ízlés szerint módosítható */
+  padding: 60px 20px;
+}
 
+/* A tartalom konténeren belüli igazítása */
+.service-highlight-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Bal oldali szövegek */
+.service-highlight-text {
+  flex: 1;
+  margin-right: 40px;
+  max-width: 600px;
+}
+
+.service-highlight-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.service-highlight-text p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Árrész, kiemeléssel */
+.service-highlight-price {
+  font-weight: bold;
+  color: #F69344;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Jobb oldali kép */
+.service-highlight-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.service-highlight-image img {
+  max-width: 80%;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Reszponzív töréspont a kétoszlopos elrendezéshez */
+@media (max-width: 900px) {
+  .service-highlight-content {
+    flex-direction: column;
+  }
+  .service-highlight-text {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .service-highlight-image {
+    margin-bottom: 20px;
+  }
 }

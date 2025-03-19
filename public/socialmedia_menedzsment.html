@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Social Media Menedzsment - MONARQ Marketing Agency</title>
-  <meta name="description" content="Social media menedzsment szolgáltatásaink a MONARQ Marketing Agency-nál.">
+  <title>Social media menedzsment</title>
+  <meta name="description" content="Általános szolgáltatásleírás a MONARQ Marketing Agency számára." />
+  <!-- A meglévő, kiegészített styles.css fájlra hivatkozunk -->
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -14,7 +15,7 @@
       <a href="../index.html" class="logo">
         <img src="../assets/images/Monarque.png" alt="MONARQ Marketing Agency Logo" />
       </a>
-      <!-- Hamburger menu (mobile) -->
+      <!-- Hamburger menu (mobil) -->
       <button class="nav-toggle" aria-label="Toggle navigation">
         <span class="hamburger"></span>
       </button>
@@ -25,7 +26,7 @@
           <li><a href="../index.html#our-process">Folyamataink</a></li>
           <li><a href="../index.html#about-us">Rólunk</a></li>
           <li><a href="../index.html#references">Portfolio</a></li>
-          <li><a href="./contact.html">Kapcsolat</a></li>
+          <li><a href="contact.html">Kapcsolat</a></li>
         </ul>
       </nav>
     </div>
@@ -33,37 +34,28 @@
 
   <!-- Fő tartalom -->
   <main>
-    <!-- HERO szekció a Social Media Menedzsment szolgáltatáshoz -->
-    <!-- A "hero-socialmedia" osztály stílusait kizárólag a külső CSS-ben kell definiálni,
-         pl. háttér: linear-gradient(...) és a megfelelő padding -->
-    
-
-    <!-- Szolgáltatás részletei -->
-    <section id="service-details" class="service-details">
-      <div class="container">
-        <h2>🚀 A TE MÁRKÁD, A MI KÜLDETÉSÜNK! 🚀</h2>
-        <br>
-        <p>
-          Tudtad, hogy a vevőid 80%-a már az első benyomás alapján dönt? Ha a közösségi média profilod nem elég ütős,
-          elveszíted őket, mielőtt egyáltalán megismernének! Csapatunk segít abban, hogy vállalkozásod profi és vonzó legyen
-          a közösségi platformokon.
+    <!-- Kétoszlopos szakasz a szolgáltatás bemutatásához -->
+    <section class="service-highlight">
+      <div class="container service-highlight-content">
+        <div class="service-highlight-text">
+          <h2 class="service-highlight-title">A TE MÁRKÁD, A MI KÜLDETÉSÜNK! 🚀</h2>
+          <p>Te a vállalkozásodra fókuszálsz, mi pedig elérjük, hogy mindenki rólad beszéljen!
         </p>
-        <ul>
-          <li><strong>Profil optimalizáció:</strong> A márka arculatának és kommunikációjának finomítása.</li>
-          <li><strong>Tartalomkészítés és ütemezés:</strong> Kreatív és egyedi posztok, videók, képek készítése.</li>
-          <li><strong>Kampányok menedzselése:</strong> Céltudatos hirdetési kampányok lebonyolítása.</li>
-          <li><strong>Eredmények elemzése:</strong> Teljesítménymutatók és visszajelzések folyamatos figyelemmel kísérése.</li>
-        </ul>
-        <p>
-          Engedd meg, hogy a közösségi médián keresztül meséljük el a vállalkozásod történetét, és növeljük az elérésedet,
-          ügyfélkapcsolataidat!
-        </p>
-        <button onclick="document.location='contact.html'">Kérj ajánlatot!</button>
+          <ul>
+            <li><strong>Stratégia –</strong> Nem posztolgatunk találomra, minden lépésnek célja van!</li>
+            <li><strong>Tartalomgyártás –</strong> Látványos, ütős és értékes posztok, amik vonzzák a követőket.</li>
+            <li><strong>Növekedés –</strong> Több elérés, több interakció, több ügyfél!</li>
+          </ul>
+          <p class="service-highlight-price"> 12,000,000 Ft-tól</p>
+        </div>
+        <div class="service-highlight-image">
+          <img src="../assets/images/tiktokmarketing.jpg" alt="Marketing Tiktokra" />
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Lábléc -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-content">
@@ -94,6 +86,7 @@
     </div>
   </footer>
 
+  <!-- Ha használod a korábbi script.js-t, akkor itt hivatkozunk rá -->
   <script src="script.js"></script>
 </body>
 </html>
