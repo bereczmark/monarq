@@ -89,19 +89,19 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function setTextColorForSection(section) {
-  // Ha a section rendelkezik data-bg attribútummal, azt használjuk
+  // ha a section rendelkezik data-bg attribútummal, azt használjuk
   let bgType = section.getAttribute("data-bg");
   if(bgType === "dark") {
     section.style.color = "#fff";
   } else if(bgType === "light") {
     section.style.color = "#000";
-  } else {
-    // Próbáljuk meg lekérni a computed backgroundColor értéket
+  } else { 
+    //  lekérni a computed backgroundColor értéket
     let bgColor = window.getComputedStyle(section).backgroundColor;
     let rgb = bgColor.match(/\d+/g);
     if(rgb && rgb.length >= 3) {
       let r = parseInt(rgb[0]), g = parseInt(rgb[1]), b = parseInt(rgb[2]);
-      // Egyszerű luminancia számítás (percepció szerint)
+      // (percepció szerint)
       let luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
       section.style.color = luminance > 0.5 ? "#000" : "#fff";
     }
