@@ -201,7 +201,7 @@ body {
   background: linear-gradient(
     to bottom,
     rgba(246, 147, 68, 1) 0%,
-    rgba(246, 148, 68, 0.832) 100%
+    rgba(255, 162, 68, 0.832) 100%
   );
   text-align: center;
 }
@@ -322,7 +322,7 @@ body {
   padding: 60px 50px;
   background: linear-gradient(
     to bottom,
-    rgba(246, 148, 68, 0.832) 0%,
+    rgba(255, 162, 68, 0.832) 0%,
     rgba(113, 127, 253, 0.91) 100%
   );
   text-align: center;
@@ -395,7 +395,6 @@ body {
   text-align: left;
 }
 
-
 .step-text h3 {
   font-size: 1.6rem;
   margin-bottom: 15px;
@@ -430,7 +429,7 @@ body {
   padding: 60px 20px;
   background: linear-gradient(
     to top,
-    rgba(113, 127, 253, 0.671) 0%,/*rgb(42, 30, 98) 0%,*/
+    rgba(113, 127, 253, 0.671) 0%,
     rgb(113, 127, 253, 0.91) 100%
   );
   text-align: center;
@@ -493,6 +492,21 @@ body {
 .team-bubble p {
   font-size: 0.95rem;
   color: inherit;
+}
+
+/* Új stílusok: Kiemelt tulajdonosok és Alkalmazottak */
+/* Kiemelt tulajdonosok (featured) – nagyobb konténer */
+.team-bubble.featured {
+  width: 320px;
+  padding: 30px;
+  font-size: 1.2rem;
+}
+
+/* Alkalmazottak (employee) – kisebb konténer */
+.team-bubble.employee {
+  width: 200px;
+  padding: 15px;
+  font-size: 0.9rem;
 }
 
 /* Referenciák */
@@ -580,7 +594,6 @@ button:hover {
     text-align: center;
   }
   
-
   .step-text h3 {
     font-size: 1.3rem;
     margin-bottom: 15px;
@@ -744,11 +757,10 @@ button:hover {
 
 /* Kétoszlopos szakasz: bal oldalon a szöveg, jobb oldalon a kép */
 .service-highlight {
-  background: #f8f6f4; /* Halvány, semleges háttérszín – ízlés szerint módosítható */
+  background: #f8f6f4;
   padding: 60px 20px;
 }
 
-/* A tartalom konténeren belüli igazítása */
 .service-highlight-content {
   display: flex;
   flex-wrap: wrap;
@@ -756,7 +768,6 @@ button:hover {
   justify-content: space-between;
 }
 
-/* Bal oldali szövegek */
 .service-highlight-text {
   flex: 1;
   margin-right: 40px;
@@ -777,7 +788,6 @@ button:hover {
   color: #333;
 }
 
-/* Árrész, kiemeléssel */
 .service-highlight-price {
   font-weight: bold;
   color: #F69344;
@@ -785,7 +795,6 @@ button:hover {
   margin-top: 10px;
 }
 
-/* Jobb oldali kép */
 .service-highlight-image {
   flex: 1;
   display: flex;
@@ -798,7 +807,6 @@ button:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Reszponzív töréspont a kétoszlopos elrendezéshez */
 @media (max-width: 900px) {
   .service-highlight-content {
     flex-direction: column;
@@ -811,3 +819,26 @@ button:hover {
     margin-bottom: 20px;
   }
 }
+
+/* Portfolio Carousel Styles */
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 20px 0;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+  width: calc(100% / 3);
+  flex-shrink: 0;
+  border-radius: 20px;
+  padding: 5px;
+}
+

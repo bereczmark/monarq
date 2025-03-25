@@ -7,6 +7,67 @@
   <meta name="description" content="Általános szolgáltatásleírás a MONARQ Marketing Agency számára." />
   <!-- A meglévő, kiegészített styles.css fájlra hivatkozunk -->
   <link rel="stylesheet" href="../styles.css" />
+  <style>
+    /* Additional Contact Page Styles */
+    .contact-section {
+      padding: 60px 20px;
+      background: linear-gradient( to bottom, #f8f6f4, rgba(0,0,0,1) );
+      text-align: center;
+      color: #fff;
+    }
+    .contact-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+    .contact-section p {
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+      transition: box-shadow 0.3s ease;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(246,147,68,0.8);
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 5px rgba(246,147,68,0.5); }
+      50% { box-shadow: 0 0 15px rgba(246,147,68,1); }
+      100% { box-shadow: 0 0 5px rgba(246,147,68,0.5); }
+    }
+    .contact-form button {
+      background: #F69344;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+    .contact-form button:hover {
+      background: #e58338;
+    }
+  </style>
 </head>
 <body>
   <!-- Navigációs menü -->
@@ -53,6 +114,21 @@
         </div>
       </div>
     </section>
+
+    <section class="contact-section">
+      <h2>Lépj kapcsolatba velünk</h2>
+      <p>Ha kérdésed van, vagy szeretnél együttműködni, küldd el üzeneted az alábbi űrlap kitöltésével!</p>
+      <div class="contact-form">
+        <form id="contactForm" novalidate>
+          <input type="text" id="name" name="name" placeholder="Név" required>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+          <input type="text" id="subject" name="subject" placeholder="Tárgy" required>
+          <textarea id="message" name="message" rows="5" placeholder="Üzenet" required></textarea>
+          <button type="submit">Küldés</button>
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <!-- Lábléc -->

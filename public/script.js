@@ -63,7 +63,7 @@ const observer = new IntersectionObserver((entries, observer) => {
 
 animatedElements.forEach(elem => observer.observe(elem));
 
-// Dinamikus szövegszín beállítása a háttér kontrasztja alapján
+// Dinamikus szövegszín beállítása a háttér kontrasztja alapján és Mobile navigation
 window.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section');
   sections.forEach(section => {
@@ -88,20 +88,61 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Portfolio Carousel – új funkció a végtelen körhinta jellegű képcsere megvalósításához
+document.addEventListener('DOMContentLoaded', function() {
+  const carouselTrack = document.querySelector('.carousel-track');
+  const carouselContainer = document.querySelector('.carousel-container');
+  
+  if (carouselTrack && carouselContainer) {
+    // Az eredeti diák listája
+    const originalSlides = Array.from(carouselTrack.children);
+    const numVisible = 3;
+    
+    // Klónozzuk az első numVisible elemet és fűzzük hozzá a végéhez
+    originalSlides.slice(0, numVisible).forEach(slide => {
+      carouselTrack.appendChild(slide.cloneNode(true));
+    });
+    
+    let slideIndex = 0;
+    // Számoljuk ki az egy kép szélességét (a konténer szélessége osztva a látható képek számával)
+    const updateImageWidth = () => carouselContainer.offsetWidth / numVisible;
+    let imageWidth = updateImageWidth();
+    
+    // Frissítjük a kép szélességét ablakméret változásakor
+    window.addEventListener('resize', () => {
+      imageWidth = updateImageWidth();
+    });
+    
+    setInterval(() => {
+      slideIndex++;
+      carouselTrack.style.transition = "transform 0.5s ease-in-out";
+      carouselTrack.style.transform = `translateX(-${slideIndex * imageWidth}px)`;
+      // Ha az eredeti diák végére értünk, visszaállítjuk a kezdőpozíciót
+      if (slideIndex >= originalSlides.length) {
+        setTimeout(() => {
+          carouselTrack.style.transition = "none";
+          carouselTrack.style.transform = "translateX(0)";
+          slideIndex = 0;
+        }, 500);
+      }
+    }, 2000);
+  }
+});
+
 function setTextColorForSection(section) {
-  // ha a section rendelkezik data-bg attribútummal, azt használjuk
+  // Ha a section rendelkezik data-bg attribútummal, azt használjuk
   let bgType = section.getAttribute("data-bg");
   if(bgType === "dark") {
     section.style.color = "#fff";
   } else if(bgType === "light") {
     section.style.color = "#000";
   } else { 
-    //  lekérni a computed backgroundColor értéket
+    // Lekérjük a computed backgroundColor értéket
     let bgColor = window.getComputedStyle(section).backgroundColor;
     let rgb = bgColor.match(/\d+/g);
     if(rgb && rgb.length >= 3) {
       let r = parseInt(rgb[0]), g = parseInt(rgb[1]), b = parseInt(rgb[2]);
-      // (percepció szerint)
+      // Percepció szerint számolva
       let luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
       section.style.color = luminance > 0.5 ? "#000" : "#fff";
     }
