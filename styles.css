@@ -500,6 +500,7 @@ body {
   width: 320px;
   padding: 30px;
   font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* Alkalmazottak (employee) – kisebb konténer */
@@ -747,12 +748,35 @@ button:hover {
 .hidden {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.8s ease, transform 1.3s ease;
 }
 
 .show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Új animációs osztályok: vízszintes csúszás */
+.hidden-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 1.3s ease;
+}
+
+.hidden-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hidden-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease, transform 1.3s ease;
+}
+
+.hidden-right.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Kétoszlopos szakasz: bal oldalon a szöveg, jobb oldalon a kép */
@@ -841,4 +865,3 @@ button:hover {
   border-radius: 20px;
   padding: 5px;
 }
-

@@ -43,18 +43,19 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Intersection Observer az egyéb animációkhoz (pl. .process-step, .team-bubble)
+// Intersection Observer az egyéb animációkhoz (pl. process-step, team-bubble)
+// Figyeljük az elemeket, amelyeknek osztályai: .hidden, .hidden-left, .hidden-right
 const options = {
   root: null,
   threshold: 0.1
 };
 
-const animatedElements = document.querySelectorAll('.hidden');
+const animatedElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
 
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.remove('hidden');
+      // Csak hozzáadjuk a 'show' osztályt, így a CSS-ben definiált animációk aktiválódnak
       entry.target.classList.add('show');
       observer.unobserve(entry.target);
     }
@@ -63,7 +64,7 @@ const observer = new IntersectionObserver((entries, observer) => {
 
 animatedElements.forEach(elem => observer.observe(elem));
 
-// Dinamikus szövegszín beállítása a háttér kontrasztja alapján és Mobile navigation
+// Dinamikus szövegszín beállítása a háttér kontrasztja alapján, illetve Mobile navigation
 window.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section');
   sections.forEach(section => {
@@ -79,7 +80,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
   
-  // Close hamburger menu automatically after clicking any nav link
+  // Hamburger menü automatikus lezárása linkre kattintáskor
   const navLinks = mainNav.querySelectorAll('a');
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -88,7 +89,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Portfolio Carousel – új funkció a végtelen körhinta jellegű képcsere megvalósításához
+// Portfolio Carousel – végtelen körhinta jellegű képcsere megvalósítása
 document.addEventListener('DOMContentLoaded', function() {
   const carouselTrack = document.querySelector('.carousel-track');
   const carouselContainer = document.querySelector('.carousel-container');
