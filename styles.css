@@ -405,13 +405,13 @@ section h2::after {
 }
 
 .step-text h3 {
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   margin-bottom: 15px;
   color: #333;
 }
 
 .step-text p {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   line-height: 1.6;
   color: #333;
   text-align: justify;
@@ -579,6 +579,9 @@ button:hover {
     color: #333;
     position: relative;
     line-height: 1.4;
+  }
+  body h2 {
+    font-size: 1.8rem;
   }
   .process-step {
     flex-direction: column;
