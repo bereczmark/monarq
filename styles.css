@@ -194,6 +194,28 @@ body {
   transform: translateY(0);
 }
 
+/* Section Headings Modern Style */
+section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #F69344, #e58338);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
 /* Szolgáltatások (our-services) */
 .our-services {
   min-height: 60vh;
@@ -201,7 +223,7 @@ body {
   background: linear-gradient(
     to bottom,
     rgba(246, 147, 68, 1) 0%,
-    rgba(255, 162, 68, 0.832) 100%
+    rgba(251, 218, 180, 0.832) 100%
   );
   text-align: center;
 }
@@ -242,7 +264,7 @@ body {
   font-size: 1.2rem;
 }
 
-/* From Uiverse.io by alexmaracinaru */ 
+/* Gomb stílus (Uiverse.io mintából) */
 .servb {
   position: relative;
   margin: auto;
@@ -261,7 +283,8 @@ body {
   left: 0;
   display: block;
   border-radius: 50px;
-  background: #b1dae7;
+  /*background: #b1dae7; */
+  background: #fff;
   width: 45px;
   height: 45px;
   transition: all 0.3s ease;
@@ -283,7 +306,8 @@ body {
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke: #234567;
+  /* stroke: #234567; */
+  stroke: #f8f6f4;
   stroke-width: 2;
   transform: translateX(-5px);
   transition: all 0.3s ease;
@@ -302,18 +326,10 @@ body {
   transform: scale(0.95);
 }
 
-.service {
-  background-color: rgba(246, 148, 68, 0.4);
+.service:hover {
+  background-color: rgba(255, 255, 255, 0.02);
   border-radius: 50px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-}
-
-.our-services h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0px;
-  color: #563838;
-  text-transform: uppercase;
-  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Folyamataink (our-process) */
@@ -322,34 +338,27 @@ body {
   padding: 60px 50px;
   background: linear-gradient(
     to bottom,
-    rgba(255, 162, 68, 0.832) 0%,
+    rgba(251, 218, 180, 0.832) 0%,
     rgba(113, 127, 253, 0.91) 100%
   );
   text-align: center;
 }
 
-.our-process h2 {
-  font-size: 2rem;
-  margin-bottom: 0px;
-  color: #563838;
-  text-transform: uppercase;
-}
-
-.our-process hr{
+.our-process hr {
   border: none;
   height: 2px;
   background: #563838;
   width: 50px;
   margin: 20px auto;
 }
-#inithr{
+#inithr {
   border: none;
   height: 2px;
   background: #563838;
   width: 300px;
   margin: 0px auto;
 }
-#serviceinithr{
+#serviceinithr {
   border: none;
   height: 2px;
   background: #563838;
@@ -357,7 +366,7 @@ body {
   margin: 0px auto;
 }
 
-#lefthrproc{
+#lefthrproc {
   border: none;
   height: 2px;
   background: #000000;
@@ -366,7 +375,7 @@ body {
   margin-left: 20px;
 }
 
-#righthrproc{
+#righthrproc {
   border: none;
   height: 2px;
   background: #000000;
@@ -435,28 +444,14 @@ body {
   text-align: center;
 }
 
-#abouthrinit{
+#abouthrinit {
   border: none;
   height: 2px;
   background: #fdfdfd;
   width: 300px;
   margin: 0px auto;
 }
-#portfoliohrinit{
-  border: none;
-  height: 2px;
-  background: #fdfdfd;
-  width: 200px;
-  margin: 0px auto;
-}
 
-.about-us h2 {
-  font-size: 2rem;
-  margin-bottom: 0px;
-  color: inherit;
-}
-
-/* About Us Bubble Styles */
 .team-bubbles {
   display: flex;
   flex-wrap: wrap;
@@ -494,8 +489,7 @@ body {
   color: inherit;
 }
 
-/* Új stílusok: Kiemelt tulajdonosok és Alkalmazottak */
-/* Kiemelt tulajdonosok (featured) – nagyobb konténer */
+/* Kiemelt tulajdonosok */
 .team-bubble.featured {
   width: 320px;
   padding: 30px;
@@ -503,7 +497,7 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Alkalmazottak (employee) – kisebb konténer */
+/* Alkalmazottak */
 .team-bubble.employee {
   width: 200px;
   padding: 15px;
@@ -528,22 +522,24 @@ body {
   color: #fff;
 }
 
-.references h2 {
-  font-size: 2rem;
-  margin-bottom: 0px;
-  color: inherit;
+#portfoliohrinit {
+  border: none;
+  height: 2px;
+  background: #fdfdfd;
+  width: 200px;
+  margin: 0px auto;
 }
 
-#lefthr{
+#lefthr {
   border: none;
   height: 2px;
   background: #ffffff;
   width: 50%;
   margin: 20px auto;
-  margin-left:20px;
+  margin-left: 20px;
 }
 
-#righthr{
+#righthr {
   border: none;
   height: 2px;
   background: #ffffff;
