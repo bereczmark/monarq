@@ -136,7 +136,7 @@ function setTextColorForSection(section) {
   if(bgType === "dark") {
     section.style.color = "#fff";
   } else if(bgType === "light") {
-    section.style.color = "#000";
+    section.style.color = "#000"
   } else { 
     // Lekérjük a computed backgroundColor értéket
     let bgColor = window.getComputedStyle(section).backgroundColor;

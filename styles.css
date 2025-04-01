@@ -368,20 +368,23 @@ section h2::after {
 
 #lefthrproc {
   border: none;
-  height: 2px;
-  background: #000000;
-  width: 50%;
-  margin: 20px auto;
+  height: 4px;
+  width: 60%; /* initial width */
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   margin-left: 20px;
+  background: linear-gradient(to right, transparent, #F69344)
 }
 
 #righthrproc {
   border: none;
-  height: 2px;
-  background: #000000;
-  width: 50%;
-  margin: 20px auto;
+  height: 4px;
+  width: 50%; /* initial width */
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   margin-right: 20px;
+  margin-left: auto;
+  background: linear-gradient(to right, #F69344, transparent)
 }
 
 /* process-step layout */
