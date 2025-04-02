@@ -1,1 +1,171 @@
-<p>alma</p>
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio építés</title>
+  <meta name="description" content="Általános szolgáltatásleírás a MONARQ Marketing Agency számára." />
+  <!-- A meglévő, kiegészített styles.css fájlra hivatkozunk -->
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    /* Additional Contact Page Styles */
+    .contact-section {
+      padding: 60px 20px;
+      background: linear-gradient( to bottom, #f8f6f4, rgba(0,0,0,1) );
+      text-align: center;
+      color: #fff;
+    }
+    .contact-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: rgb(11, 11, 11);
+    }
+    .contact-section p {
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+      transition: box-shadow 0.3s ease;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(246,147,68,0.8);
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 5px rgba(246,147,68,0.5); }
+      50% { box-shadow: 0 0 15px rgba(246,147,68,1); }
+      100% { box-shadow: 0 0 5px rgba(246,147,68,0.5); }
+    }
+    .contact-form button {
+      background: #F69344;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+    .contact-form button:hover {
+      background: #e58338;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigációs menü -->
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/Monarque.png" alt="MONARQ Marketing Agency Logo" />
+      </a>
+      <!-- Hamburger menu (mobil) -->
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="../index.html#hero">Kezdőlap</a></li>
+          <li><a href="../index.html#our-services">Szolgáltatásaink</a></li>
+          <li><a href="../index.html#our-process">Folyamataink</a></li>
+          <li><a href="../index.html#about-us">Rólunk</a></li>
+          <li><a href="../index.html#references">Portfolio</a></li>
+          <li><a href="contact.html">Kapcsolat</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Fő tartalom -->
+  <main>
+    <!-- Kétoszlopos szakasz a szolgáltatás bemutatásához -->
+    <section class="service-highlight">
+      <div class="container service-highlight-content">
+        <div class="service-highlight-text">
+          <h2 class="service-highlight-title">Engedd, hogy a munkád beszéljen rólad! 🚀</h2>
+          <p>Egy ütős portfólió nem csak szép. Ez az első benyomás rólad, a digitális névjegykártyád.
+        </p>
+          <ul>
+            <li><strong>Bizalomépítés:</strong> Az emberek nem a legolcsóbbat keresik – hanem a legmegbízhatóbbat. Egy profi portfólió azonnal bizalmat épít.</li>
+            <br>
+            <li><strong>Könnyen megosztható:</strong> Elég egy link, és már küldheted is az ajánlatkérésekhez, jelentkezésekhez vagy referenciaként – bárhol, bármikor.</li>
+            <br>
+            <li><strong>Szünetmentes:</strong> Míg te alszol, a portfóliód dolgozik. Megmutatja a munkáidat, bemutat téged, elmondja, miben vagy kiemelkedő.</li>
+          </ul>
+          <p class="service-highlight-price"> 12 Ft-tól</p>
+        </div>
+        <div class="service-highlight-image">
+          <img src="../assets/images/portfolioconstruction.jpg" alt="Marketing Tiktokra" />
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <h2>📩 Professzionális portfólióképítés – neked, rólad, érted.</h2>
+      <p>💥 Kezdjük el ma! 💥</p>
+      <div class="contact-form">
+        <form id="contactForm" novalidate>
+          <input type="text" id="name" name="name" placeholder="Név" required>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+          <input type="text" id="subject" name="subject" placeholder="Tárgy" required>
+          <textarea id="message" name="message" rows="5" placeholder="Üzenet" required></textarea>
+          <button type="submit">Küldés</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lábléc -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <!-- Itt elhelyezhető logó -->
+        </div>
+        <div class="footer-nav">
+          <ul>
+            <li><a href="../index.html#hero">Kezdőlap</a></li>
+            <li><a href="../index.html#our-process">Folyamataink</a></li>
+            <li><a href="../index.html#about-us">Rólunk</a></li>
+            <li><a href="../index.html#references">Portfolio</a></li>
+            <li><a href="contact.html">Kapcsolat</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com" target="_blank">
+            <img src="../assets/logos/fb.png" alt="Facebook" loading="lazy" />
+          </a>
+          <a href="https://www.instagram.com/monarqmarketing/?utm_source=ig_web_button_share_sheet" target="_blank">
+            <img src="../assets/logos/ig.png" alt="Instagram" loading="lazy" />
+          </a>
+        </div>
+        <div class="footer-copy">
+          <p>&copy; 2025 MONARQ Marketing Agency. Minden jog fenntartva. v5</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Ha használod a korábbi script.js-t, akkor itt hivatkozunk rá -->
+  <script src="script.js"></script>
+</body>
+</html>
