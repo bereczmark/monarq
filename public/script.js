@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (carouselTrack && carouselContainer) {
     // Az eredeti diák listája
     const originalSlides = Array.from(carouselTrack.children);
-    const numVisible = 3;
+    const numVisible = 5;
     
     // Klónozzuk az első numVisible elemet és fűzzük hozzá a végéhez
     originalSlides.slice(0, numVisible).forEach(slide => {
