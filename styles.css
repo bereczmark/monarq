@@ -228,6 +228,10 @@ section h2::after {
   text-align: center;
 }
 
+/* .hbox {
+  max-width: 40%;
+}*/
+
 .service-details {
   min-height: 60vh;
   padding: 69px 50px;
@@ -315,7 +319,7 @@ section h2::after {
 
 .servb:hover:before {
   width: 100%;
-  background: #b1dae7;
+  background: #ea7d34;
 }
 
 .servb:hover svg {
