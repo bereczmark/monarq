@@ -498,7 +498,7 @@ section h2::after {
 
 /* Kiemelt tulajdonosok */
 .team-bubble.featured {
-  width: 320px;
+  width: 280px;
   padding: 30px;
   font-size: 1.2rem;
   background-color: rgba(0, 0, 0, 0.3);
