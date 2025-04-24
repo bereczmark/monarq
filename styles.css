@@ -108,12 +108,13 @@ body {
   position: relative;
   transition: color 0.3s ease;
   padding: 10px 0;
-  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-family: sans-serif;
   font-weight: bold;
 }
 
 .site-header .main-nav ul li a:hover {
   color: #F69344;
+  font-family: Comic Sans MS, Comic Sans, cursive
 }
 
 /* Hero szekció */
@@ -511,6 +512,7 @@ section h2::after {
   font-size: 0.9rem;
 }
 
+
 /* Referenciák */
 .references {
   min-height: 60vh;
@@ -520,6 +522,7 @@ section h2::after {
     rgb(113, 127, 253, 0.671) 0%,
     rgb(0, 0, 0) 100%
   );
+  background-color: #000000;
   text-align: center;
   color: #fff;
 }
@@ -870,7 +873,7 @@ button:hover {
 }
 
 .carousel-track img {
-  width: calc(100% / 5);
+  width: calc(100% / 4);
   flex-shrink: 0;
   border-radius: 20px;
   padding: 5px;

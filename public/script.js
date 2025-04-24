@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (carouselTrack && carouselContainer) {
     // Az eredeti diák listája
     const originalSlides = Array.from(carouselTrack.children);
-    const numVisible = 5;
+    const numVisible = 4;
     
     // Klónozzuk az első numVisible elemet és fűzzük hozzá a végéhez
     originalSlides.slice(0, numVisible).forEach(slide => {
@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 2000);
   }
 });
+
 
 function setTextColorForSection(section) {
   // Ha a section rendelkezik data-bg attribútummal, azt használjuk
