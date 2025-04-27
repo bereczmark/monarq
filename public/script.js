@@ -131,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
 function setTextColorForSection(section) {
   // Ha a section rendelkezik data-bg attribútummal, azt használjuk
   let bgType = section.getAttribute("data-bg");

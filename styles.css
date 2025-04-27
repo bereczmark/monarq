@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /*outline: 1px solid red !important;*/
 }
 
 body {
@@ -18,6 +19,7 @@ body {
   color: #333;
   position: relative;
   line-height: 1.4;
+  overflow-x: scroll !important;
 }
 
 /* Konténer */
@@ -46,6 +48,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 100% ;
 }
 
 .site-header .logo img {
@@ -522,7 +525,6 @@ section h2::after {
     rgb(113, 127, 253, 0.671) 0%,
     rgb(0, 0, 0) 100%
   );
-  background-color: #000000;
   text-align: center;
   color: #fff;
 }
@@ -643,6 +645,7 @@ button:hover {
     display: none;
     flex-direction: column;
     text-align: center;
+    max-width: 100%;
   }
   .main-nav.active {
     display: flex;
@@ -694,6 +697,28 @@ button:hover {
     min-height: auto; /* Allow the section to shrink if needed */
     height: auto;
   }
+
+  /* Portfolio Carousel Styles */
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  padding: 20px 0;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+  width: calc(100% / 4);
+  flex-shrink: 0;
+  border-radius: 20px;
+  padding: 5px;
+}
 }
 
 /* Footer */
@@ -844,7 +869,7 @@ button:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   .service-highlight-content {
     flex-direction: column;
   }
