@@ -1,3 +1,10 @@
+// script.js
+
+// Segédfüggvény: mobil/nem-mobil detektálása breakpoint alapján
+function isMobile() {
+  return window.matchMedia('(max-width: 800px)').matches;
+}
+
 // Scroll event: Repülőgép animációja, bal és jobb oldali vertikális feliratok mozgatása
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
@@ -15,14 +22,8 @@ window.addEventListener('scroll', () => {
   }
   
   // Betűk megjelenítése a bal oldali felirathoz
-  const verticalTextSpans = document.querySelectorAll('.vertical-text span');
-  const revealIndex = Math.floor(scrollY / 50);
-  verticalTextSpans.forEach((span, index) => {
-    if (index < revealIndex) {
-      span.classList.add('visible');
-    } else {
-      span.classList.remove('visible');
-    }
+  document.querySelectorAll('.vertical-text span').forEach((span, index) => {
+    span.classList.toggle('visible', index < Math.floor(scrollY / 50));
   });
   
   // Jobb oldali vertikális felirat mozgatása
@@ -32,122 +33,126 @@ window.addEventListener('scroll', () => {
   }
   
   // Betűk megjelenítése a jobb oldali felirathoz
-  const verticalTextRightSpans = document.querySelectorAll('.vertical-text-right span');
-  const revealIndexRight = Math.floor(scrollY / 50);
-  verticalTextRightSpans.forEach((span, index) => {
-    if (index < revealIndexRight) {
-      span.classList.add('visible');
-    } else {
-      span.classList.remove('visible');
-    }
+  document.querySelectorAll('.vertical-text-right span').forEach((span, index) => {
+    span.classList.toggle('visible', index < Math.floor(scrollY / 50));
   });
 });
 
-// Intersection Observer az egyéb animációkhoz (pl. process-step, team-bubble)
-// Figyeljük az elemeket, amelyeknek osztályai: .hidden, .hidden-left, .hidden-right
-const options = {
-  root: null,
-  threshold: 0.1
-};
-
-const animatedElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
-
-const observer = new IntersectionObserver((entries, observer) => {
+// Intersection Observer az animációkhoz
+const observer = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      // Csak hozzáadjuk a 'show' osztályt, így a CSS-ben definiált animációk aktiválódnak
       entry.target.classList.add('show');
-      observer.unobserve(entry.target);
+      obs.unobserve(entry.target);
     }
   });
-}, options);
+}, { root: null, threshold: 0.1 });
+document.querySelectorAll('.hidden, .hidden-left, .hidden-right')
+  .forEach(elem => observer.observe(elem));
 
-animatedElements.forEach(elem => observer.observe(elem));
-
-// Dinamikus szövegszín beállítása a háttér kontrasztja alapján, illetve Mobile navigation
+// Mobil navigáció és dinamikus szöveg-szín beállítása
 window.addEventListener('DOMContentLoaded', () => {
-  const sections = document.querySelectorAll('section');
-  sections.forEach(section => {
-    setTextColorForSection(section);
-  });
-  
-  // Mobile navigation toggle
+  // Szövegszín beállítása
+  document.querySelectorAll('section').forEach(setTextColorForSection);
+
+  // Hamburger toggle
   const navToggle = document.querySelector('.nav-toggle');
   const mainNav = document.querySelector('.main-nav');
-  if (navToggle) {
-    navToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('active');
-    });
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', () => mainNav.classList.toggle('active'));
+    mainNav.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', () => mainNav.classList.remove('active'))
+    );
   }
-  
-  // Hamburger menü automatikus lezárása linkre kattintáskor
-  const navLinks = mainNav.querySelectorAll('a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mainNav.classList.remove('active');
-    });
+});
+
+// Portfolio Carousel – végtelen körhintás
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.querySelector('.carousel-track');
+  const container = document.querySelector('.carousel-container');
+  if (!track || !container) return;
+
+  const slides = Array.from(track.children);
+  const numVisible = 4;
+  slides.slice(0, numVisible).forEach(slide => {
+    track.appendChild(slide.cloneNode(true));
   });
+
+  let index = 0;
+  const slideWidth = () => container.offsetWidth / numVisible;
+  let w = slideWidth();
+  window.addEventListener('resize', () => { w = slideWidth(); });
+
+  setInterval(() => {
+    index++;
+    track.style.transition = 'transform 0.5s ease-in-out';
+    track.style.transform = `translateX(-${index * w}px)`;
+    if (index >= slides.length) {
+      setTimeout(() => {
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(0)';
+        index = 0;
+      }, 500);
+    }
+  }, 2000);
 });
 
-// Portfolio Carousel – végtelen körhinta jellegű képcsere megvalósítása
-document.addEventListener('DOMContentLoaded', function() {
-  const carouselTrack = document.querySelector('.carousel-track');
-  const carouselContainer = document.querySelector('.carousel-container');
-  
-  if (carouselTrack && carouselContainer) {
-    // Az eredeti diák listája
-    const originalSlides = Array.from(carouselTrack.children);
-    const numVisible = 4;
-    
-    // Klónozzuk az első numVisible elemet és fűzzük hozzá a végéhez
-    originalSlides.slice(0, numVisible).forEach(slide => {
-      carouselTrack.appendChild(slide.cloneNode(true));
-    });
-    
-    let slideIndex = 0;
-    // Számoljuk ki az egy kép szélességét (a konténer szélessége osztva a látható képek számával)
-    const updateImageWidth = () => carouselContainer.offsetWidth / numVisible;
-    let imageWidth = updateImageWidth();
-    
-    // Frissítjük a kép szélességét ablakméret változásakor
-    window.addEventListener('resize', () => {
-      imageWidth = updateImageWidth();
-    });
-    
-    setInterval(() => {
-      slideIndex++;
-      carouselTrack.style.transition = "transform 0.5s ease-in-out";
-      carouselTrack.style.transform = `translateX(-${slideIndex * imageWidth}px)`;
-      // Ha az eredeti diák végére értünk, visszaállítjuk a kezdőpozíciót
-      if (slideIndex >= originalSlides.length) {
-        setTimeout(() => {
-          carouselTrack.style.transition = "none";
-          carouselTrack.style.transform = "translateX(0)";
-          slideIndex = 0;
-        }, 500);
-      }
-    }, 2000);
-  }
+// Testimonial Carousel – pozitív irányú, végtelen körbefutás, reszponzív numVisible
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.querySelector('.testimonial-carousel-track');
+  const container = document.querySelector('.testimonial-carousel-container');
+  if (!track || !container) return;
+
+  // Mobilon 1, gépen 2 elem látható
+  const numVisible = isMobile() ? 1 : 2;
+  const originals = Array.from(track.children);
+
+  // Klónozzuk az utolsó numVisible elemet, prepend-ként
+  originals.slice(-numVisible).forEach(item => {
+    track.insertBefore(item.cloneNode(true), track.firstChild);
+  });
+
+  let idx = 0;
+  const itemWidth = () => container.offsetWidth / numVisible;
+  let iw = itemWidth();
+
+  // Kezdeti offset a klónok miatt
+  track.style.transform = `translateX(-${iw * numVisible}px)`;
+
+  window.addEventListener('resize', () => {
+    iw = itemWidth();
+    track.style.transition = 'none';
+    track.style.transform = `translateX(-${iw * numVisible}px)`;
+  });
+
+  setInterval(() => {
+    idx++;
+    track.style.transition = 'transform 0.5s ease-in-out';
+    track.style.transform = `translateX(-${iw * numVisible - idx * iw}px)`;
+    if (idx >= originals.length) {
+      setTimeout(() => {
+        track.style.transition = 'none';
+        idx = 0;
+        track.style.transform = `translateX(-${iw * numVisible}px)`;
+      }, 500);
+    }
+  }, 2500);
 });
 
-
-
+// Segédfüggvény: szövegszín beállítása a háttér alapján
 function setTextColorForSection(section) {
-  // Ha a section rendelkezik data-bg attribútummal, azt használjuk
-  let bgType = section.getAttribute("data-bg");
-  if(bgType === "dark") {
-    section.style.color = "#fff";
-  } else if(bgType === "light") {
-    section.style.color = "#000"
-  } else { 
-    // Lekérjük a computed backgroundColor értéket
-    let bgColor = window.getComputedStyle(section).backgroundColor;
-    let rgb = bgColor.match(/\d+/g);
-    if(rgb && rgb.length >= 3) {
-      let r = parseInt(rgb[0]), g = parseInt(rgb[1]), b = parseInt(rgb[2]);
-      // Percepció szerint számolva
-      let luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-      section.style.color = luminance > 0.5 ? "#000" : "#fff";
+  const bgType = section.getAttribute('data-bg');
+  if (bgType === 'dark') {
+    section.style.color = '#fff';
+  } else if (bgType === 'light') {
+    section.style.color = '#000';
+  } else {
+    const bgColor = window.getComputedStyle(section).backgroundColor;
+    const rgb = bgColor.match(/\d+/g);
+    if (rgb && rgb.length >= 3) {
+      const [r, g, b] = rgb.map(Number);
+      const luminance = (0.299*r + 0.587*g + 0.114*b) / 255;
+      section.style.color = luminance > 0.5 ? '#000' : '#fff';
     }
   }
 }

@@ -904,3 +904,93 @@ button:hover {
   padding: 5px;
 }
 
+/* Új ügyfélvélemény szekció */
+.testimonials {
+  min-height: 40vh;
+  padding: 60px 20px;
+  background-color: #000000;
+  text-align: center;
+}
+
+.testimonial-carousel-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 20px 0;
+}
+
+.testimonial-carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-item {
+  width: calc(100% / 2);
+  flex-shrink: 0;
+  border-radius: 20px;
+  padding: 5px;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #333;
+  text-align: center;
+  background: black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonial item szerző + szöveg stílus */
+.testimonial-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.testimonial-author img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.testimonial-author h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #bcbcbc;
+  text-align: center;
+}
+
+.testimonial-text {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-align: left;
+  max-width: 90%;
+  line-height: 1.4;
+}
+
+
+/* Reszponzív testimonial carousel */
+@media (max-width: 800px) {
+  .testimonial-item {
+    width: calc(100% / 1);
+  flex-shrink: 0;
+  border-radius: 20px;
+  padding: 5px;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #333;
+  text-align: center;
+  background: black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}
